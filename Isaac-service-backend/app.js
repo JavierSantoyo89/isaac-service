@@ -11,7 +11,10 @@ app.use(express.json()); // convierte a JSON
 
 
 //? ------- levantar servidor ------- //
-app.listen(1689,()=>{
-    console.log('Servidor funcionando en http://localhost:1689');
-
+app.listen(process.env.PORT || 1689, ()=>{
+    if (process.env.PORT == undefined){
+        console.log("Servidor activado en el puerto: http://localhost:1689")
+    }else{
+    console.log("Servidor activado en el puerto: http://localhost:{process.env.PORT}");
+    }
 });
