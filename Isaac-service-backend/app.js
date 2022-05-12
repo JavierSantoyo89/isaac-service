@@ -18,3 +18,5 @@ app.listen(process.env.PORT || 1689, ()=>{
     console.log("Servidor activado en el puerto: http://localhost:{process.env.PORT}");
     }
 });
+
+//! ------- Faltan crear las rutas y controladores. --------- //
