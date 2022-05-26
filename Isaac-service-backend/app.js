@@ -1,11 +1,22 @@
 //? ------- Require's dependencies ------- //
 const express = require('express');
 const app = express();
+const  path = require('path');
+
+const routesAdmin = require('./routes/routes-admin')
+const routesClient = require ('./routes/routes-client');
+const routesMain = require('./routes/routers-main')
 
 
 // ---- Configuracion previa para usar metodos post, put & delete ---- //
 app.use(express.urlencoded({ extended: false})); // convierte el form a objeto literal
 app.use(express.json()); // convierte a JSON
+
+
+app.use('/',routesMain);
+app.use('/client',routesClient);
+app.use('/admin',routesAdmin);
+
 
 
 
